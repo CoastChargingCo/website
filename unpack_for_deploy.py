@@ -5,6 +5,8 @@ import re
 import subprocess
 from pathlib import Path
 
+from patch_ui import patch_html
+
 ROOT = Path(__file__).resolve().parent
 BUNDLE_PATH = ROOT / 'index (1).html'
 OUTPUT_PATH = ROOT / 'index.html'
@@ -124,6 +126,7 @@ def main() -> None:
         template += MAILerlite_LOADER
 
     template = externalize_dc_runtime(template, dc_runtime_js)
+    template = patch_html(template)
 
     OUTPUT_PATH.write_text(template, encoding='utf-8', newline='\n')
     print(f'Wrote {OUTPUT_PATH} ({len(template):,} chars)')
