@@ -5,12 +5,12 @@
              C 352 150 430 208 438 288
              L 74 288
              C 82 208 160 150 256 150 Z"
-          fill="#c15a52"/>
+          fill="#D9534A"/>
 
     <!-- Pole into the sand -->
-    <rect x="249" y="288" width="14" height="215" fill="#c15a52"/>
+    <rect x="249" y="288" width="14" height="215" fill="#D9534A"/>
 
     <!-- Finial (top tip) -->
-    <rect x="250" y="136" width="12" height="18" rx="4" fill="#c15a52"/>
+    <rect x="250" y="136" width="12" height="18" rx="4" fill="#D9534A"/>
   </g>
 </svg>

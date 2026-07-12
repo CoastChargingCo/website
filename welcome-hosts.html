@@ -27,6 +27,8 @@
       .email-container { width: 100% !important; max-width: 100% !important; }
       .content-cell { padding-left: 24px !important; padding-right: 24px !important; }
       .header-cell { padding-left: 24px !important; padding-right: 24px !important; }
+      .umbrella-col { display: none !important; width: 0 !important; max-width: 0 !important; overflow: hidden !important; }
+      .email-shell { width: 100% !important; max-width: 100% !important; }
     }
   </style>
 </head>
@@ -34,14 +36,30 @@
 
   <!-- Preheader (hidden preview text) -->
   <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all;">
-    You're on our host list. We'll be in touch soon with details.
+    You provide the space. We take care of the rest.
   </div>
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #BEE6F1;">
     <tr>
       <td align="center" style="padding: 24px 12px;">
 
-        <!-- Email container -->
+        <!-- Shell: side umbrellas + main card -->
+        <table role="presentation" class="email-shell" width="700" cellpadding="0" cellspacing="0" border="0" style="max-width: 700px; width: 100%;">
+          <tr>
+            <!-- Left umbrellas -->
+            <td class="umbrella-col" width="52" valign="top" style="width: 52px; vertical-align: top; padding-top: 48px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="52">
+                <tr><td align="center" style="padding-bottom: 140px;"><img src="https://storage.mlcdn.com/account_image/2499203/nlzTbINXAtXrYFBuBXAM2N8zfLfXNUB6xwtLwg62.png" width="48" height="48" alt="" style="display: block; width: 48px; height: auto; border: 0; transform: rotate(-5deg);" /></td></tr>
+                <tr><td align="center" style="padding-bottom: 155px;"><img src="https://storage.mlcdn.com/account_image/2499203/0GrzyeHr4Y5nqjgjwPTLPhlMHLQkCJ8fhOzQZQb6.png" width="50" height="50" alt="" style="display: block; width: 50px; height: auto; border: 0; transform: rotate(-7deg);" /></td></tr>
+                <tr><td align="center" style="padding-bottom: 148px;"><img src="https://storage.mlcdn.com/account_image/2499203/7ehq95s0tpXEzN7fp1T8ji5ZWyKwq5WXl4gXXXze.png" width="46" height="46" alt="" style="display: block; width: 46px; height: auto; border: 0; transform: rotate(-4deg);" /></td></tr>
+                <tr><td align="center" style="padding-bottom: 160px;"><img src="https://storage.mlcdn.com/account_image/2499203/nlzTbINXAtXrYFBuBXAM2N8zfLfXNUB6xwtLwg62.png" width="52" height="52" alt="" style="display: block; width: 52px; height: auto; border: 0; transform: rotate(-8deg);" /></td></tr>
+                <tr><td align="center" style="padding-bottom: 152px;"><img src="https://storage.mlcdn.com/account_image/2499203/0GrzyeHr4Y5nqjgjwPTLPhlMHLQkCJ8fhOzQZQb6.png" width="48" height="48" alt="" style="display: block; width: 48px; height: auto; border: 0; transform: rotate(-6deg);" /></td></tr>
+                <tr><td align="center"><img src="https://storage.mlcdn.com/account_image/2499203/7ehq95s0tpXEzN7fp1T8ji5ZWyKwq5WXl4gXXXze.png" width="50" height="50" alt="" style="display: block; width: 50px; height: auto; border: 0; transform: rotate(-5deg);" /></td></tr>
+              </table>
+            </td>
+
+            <!-- Main email card -->
+            <td width="600" valign="top" style="vertical-align: top;">
         <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; width: 100%; background-color: #FFFDF8; border-radius: 8px; overflow: hidden;">
 
           <!-- Accent bar -->
@@ -52,16 +70,18 @@
           <!-- Header -->
           <tr>
             <td class="header-cell" align="center" style="padding: 32px 40px 8px 40px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td style="padding-right: 11px; vertical-align: middle;">
-                    <img src="https://coastchargingco.com/assets/sun-logo.png" width="34" height="34" alt="" style="display: block; width: 34px; height: 34px; border: 0;" />
-                  </td>
-                  <td style="vertical-align: middle; font-family: 'Bricolage Grotesque', Arial, Helvetica, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.3; color: #14322F; letter-spacing: -0.01em;">
-                    Coast&nbsp;Charging&nbsp;Co
-                  </td>
-                </tr>
-              </table>
+              <a href="https://coastchargingco.com" style="text-decoration: none; color: #14322F;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td style="padding-right: 11px; vertical-align: middle;">
+                      <img src="https://coastchargingco.com/assets/sun-logo.png" width="34" height="34" alt="Coast Charging Co" style="display: block; width: 34px; height: 34px; border: 0;" />
+                    </td>
+                    <td style="vertical-align: middle; font-family: 'Bricolage Grotesque', Arial, Helvetica, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.3; color: #14322F; letter-spacing: -0.01em;">
+                      Coast&nbsp;Charging&nbsp;Co
+                    </td>
+                  </tr>
+                </table>
+              </a>
             </td>
           </tr>
 
@@ -69,26 +89,55 @@
           <tr>
             <td class="content-cell" style="padding: 16px 40px 40px 40px; font-family: Figtree, system-ui, -apple-system, 'Segoe UI', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.6; color: #1B2A22;">
 
-              <p style="margin: 0 0 20px 0;">Hi there,</p>
+              <p style="margin: 0 0 20px 0;">Thanks for your interest in hosting a Coast Charger. You're on the host list now, so let me tell you why we think it's worth it.</p>
 
-              <p style="margin: 0 0 20px 0;">Thanks for reaching out about hosting a Coast Charger! You're on our host list now.</p>
+              <p style="margin: 0 0 20px 0;">The whole idea is that you provide the space and we take care of the rest. There's no wiring to run, no permits to pull, nothing to build. A charger just needs a bit of open flat ground, which could be the corner of a parking lot, a patch of patio, or wherever there's room at your event, and because the whole thing is off-grid and solar it shows up and just works.</p>
 
-              <p style="margin: 0 0 20px 0;">Here's the quick pitch: our stations are off-grid and solar, so there's no wiring, no permits, and no infrastructure on your end. A charger can show up for an event and then roll on to the next one, or post up somewhere long-term. Parks, breweries, festivals, cafes — if riders already stop by, we give them a reason to stay a little longer and come back.</p>
+              <p style="margin: 0 0 20px 0;">What it really does is turn your spot into somewhere people have to come. E-bike riders need to charge, and if the nearest place to do that is your business or your park or your festival, then you're on their route. Riders roll up, plug in, and while they wait, they're browsing your shop, ordering a coffee, grabbing a pint, staying at your event longer. A charging station gives people a reason to visit you, and you give them a reason to come back.</p>
 
-              <p style="margin: 0 0 20px 0;">We'll be in touch soon with details. You can see what we're about anytime at <a href="https://coastchargingco.com" style="color: #0C6486; text-decoration: underline; font-weight: 600;">coastchargingco.com</a>.</p>
+              <p style="margin: 0 0 20px 0;">It works for a day or for the long haul. Because the stations are mobile and solar, a charger can post up at your cafe permanently or show up just for your weekend festival and then coast on.</p>
 
-              <p style="margin: 0 0 28px 0;">In the meantime, hit reply and tell us about your space — we'd love to hear what you have in mind.</p>
+              <p style="margin: 0 0 20px 0;">We'll be in touch soon with the details on bringing a station to you. In the meantime, hit reply and tell us about your space, we'd love to hear what you have in mind. Tell us about your business, how you think we can help, and any other wild ideas!</p>
+
+              <p style="margin: 0 0 12px 0; font-family: 'Bricolage Grotesque', Arial, Helvetica, sans-serif; font-weight: 700; font-size: 17px; color: #14322F;">A little about us:</p>
+
+              <p style="margin: 0 0 20px 0;">Coast Charging Co got started in late 2025, out of a partnership between two friends, Kaleb and Steven, and one idea we couldn't shake. It never made sense to us that if you wanted to ride farther you had to turn around and go home to charge. There should just be charging around town, the way there's parking or a bike rack, and once that thought was in our heads we started dreaming about what a solar-powered version of that could look like out in the community.</p>
+
+              <p style="margin: 0 0 20px 0;">The name comes from the ocean and from North County San Diego, which is the place that raised both of us. Think coasting down the 101 on your bike. We've had a working prototype for a while now, and we've been steadily building toward stations that can keep multiple e-bikes charged all day long on nothing but sun.</p>
+
+              <p style="margin: 0 0 28px 0;">Where we're headed is pretty simple to say, even if it's a lot of work to get there. We want solar charging to be a normal, boring part of how people get around by bike, as unremarkable as a bike rack on a corner, the Tesla Supercharger for e-bikes. When there's always a charge nearby, range stops being the reason anyone talks themselves out of riding. We'd love for your space to be one of the places that makes that true.</p>
 
               <!-- Signature -->
-              <p style="margin: 0 0 4px 0;">Talk soon,</p>
-              <p style="margin: 0 0 2px 0; font-weight: 600;">Kaleb</p>
+              <p style="margin: 0 0 4px 0; font-weight: 600;">Kaleb &amp; Steven</p>
               <p style="margin: 0; color: #204A56; font-size: 15px;">Coast Charging Co</p>
 
             </td>
           </tr>
 
+          <!-- Footer -->
+          <tr>
+            <td align="center" style="padding: 0 40px 32px 40px; font-family: Figtree, system-ui, -apple-system, 'Segoe UI', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.5; color: #7E8B83;">
+              <a href="{$unsubscribe}" style="color: #3A4740; text-decoration: underline;">Unsubscribe</a>
+            </td>
+          </tr>
+
         </table>
-        <!-- /Email container -->
+            </td>
+
+            <!-- Right umbrellas -->
+            <td class="umbrella-col" width="52" valign="top" style="width: 52px; vertical-align: top; padding-top: 88px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="52">
+                <tr><td align="center" style="padding-bottom: 145px;"><img src="https://storage.mlcdn.com/account_image/2499203/7ehq95s0tpXEzN7fp1T8ji5ZWyKwq5WXl4gXXXze.png" width="46" height="46" alt="" style="display: block; width: 46px; height: auto; border: 0; transform: rotate(6deg);" /></td></tr>
+                <tr><td align="center" style="padding-bottom: 158px;"><img src="https://storage.mlcdn.com/account_image/2499203/nlzTbINXAtXrYFBuBXAM2N8zfLfXNUB6xwtLwg62.png" width="50" height="50" alt="" style="display: block; width: 50px; height: auto; border: 0; transform: rotate(8deg);" /></td></tr>
+                <tr><td align="center" style="padding-bottom: 150px;"><img src="https://storage.mlcdn.com/account_image/2499203/0GrzyeHr4Y5nqjgjwPTLPhlMHLQkCJ8fhOzQZQb6.png" width="48" height="48" alt="" style="display: block; width: 48px; height: auto; border: 0; transform: rotate(5deg);" /></td></tr>
+                <tr><td align="center" style="padding-bottom: 162px;"><img src="https://storage.mlcdn.com/account_image/2499203/7ehq95s0tpXEzN7fp1T8ji5ZWyKwq5WXl4gXXXze.png" width="52" height="52" alt="" style="display: block; width: 52px; height: auto; border: 0; transform: rotate(7deg);" /></td></tr>
+                <tr><td align="center" style="padding-bottom: 148px;"><img src="https://storage.mlcdn.com/account_image/2499203/nlzTbINXAtXrYFBuBXAM2N8zfLfXNUB6xwtLwg62.png" width="46" height="46" alt="" style="display: block; width: 46px; height: auto; border: 0; transform: rotate(6deg);" /></td></tr>
+                <tr><td align="center"><img src="https://storage.mlcdn.com/account_image/2499203/0GrzyeHr4Y5nqjgjwPTLPhlMHLQkCJ8fhOzQZQb6.png" width="50" height="50" alt="" style="display: block; width: 50px; height: auto; border: 0; transform: rotate(8deg);" /></td></tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!-- /Shell -->
 
       </td>
     </tr>
