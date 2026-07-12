@@ -10,13 +10,18 @@ STEP_START = '        <!-- 1: select model (beach umbrella) -->'
 STEP_END = '      <div style="display: flex; align-items: center; justify-content: center; gap: 12px;'
 
 HOST_ICON = (
-    '<img src="/assets/red-umbrella.png" alt="" width="46" height="46" '
+    '<img src="/assets/red-umbrella.png" alt="" width="64" height="64" '
     'style="margin-bottom: 20px; object-fit: contain;" aria-hidden="true">'
 )
 
 HOST_SVG = re.compile(
     r'<svg width="46" height="46" viewBox="0 0 48 48" fill="none" style="margin-bottom: 20px;" aria-hidden="true">'
     r'[\s\S]*?</svg>'
+)
+
+HOST_IMG = re.compile(
+    r'<img src="/assets/red-umbrella\.png" alt="" width="\d+" height="\d+" '
+    r'style="margin-bottom: 20px; object-fit: contain;" aria-hidden="true">'
 )
 
 FAVICON_LINK = '<link rel="icon" type="image/png" href="/assets/red-umbrella.png">'
@@ -49,7 +54,10 @@ def replace_steps(html: str, steps_block: str) -> str:
 
 def patch_html(html: str, steps_block: str) -> str:
     html = replace_steps(html, steps_block)
-    html = HOST_SVG.sub(HOST_ICON, html, count=1)
+    if HOST_IMG.search(html):
+        html = HOST_IMG.sub(HOST_ICON, html, count=1)
+    else:
+        html = HOST_SVG.sub(HOST_ICON, html, count=1)
     html = re.sub(
         r'<link rel="icon" type="image/[^"]+" href="/assets/[^"]+">',
         FAVICON_LINK,
