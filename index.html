@@ -243,6 +243,15 @@
   ::selection { background: #F0B429; color: #1B2A22; }
   @keyframes coastBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
   @keyframes coastDrift { 0% { transform: translateX(0); } 100% { transform: translateX(24px); } }
+  .coast-hero-photo {
+    filter: saturate(0.72) contrast(0.94) brightness(1.03);
+  }
+  .coast-hero-tone {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, rgba(166,218,236,0.52) 0%, rgba(190,230,241,0.34) 42%, rgba(21,135,174,0.2) 100%);
+    pointer-events: none;
+  }
 </style>
 <style>
   .ml-form-embedContainer { width: 100% !important; margin: 0 !important; }
@@ -456,9 +465,10 @@
         </div>
       </div>
       <div style="position: relative;">
-        <div style="position: relative; aspect-ratio: 4/3.4; border-radius: 26px; overflow: hidden; background: #DFCEA5; border: 1px solid rgba(27,42,34,0.12); box-shadow: 0 34px 64px -30px rgba(60,50,20,0.55);">
-          <img src="/assets/media/hero.jpg" alt="E-bike on a coastal path at sunset" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
-          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21,135,174,0.2), rgba(240,180,41,0.14) 68%, transparent);"></div>
+        <div style="position: relative; aspect-ratio: 4/3.4; border-radius: 26px; overflow: hidden; background: #C5E4EF; border: 1px solid rgba(27,42,34,0.12); box-shadow: 0 34px 64px -30px rgba(60,50,20,0.55);">
+          <img class="coast-hero-photo" src="/assets/media/hero.jpg" alt="E-bike on a coastal path at sunset" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          <div class="coast-hero-tone" aria-hidden="true"></div>
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21,135,174,0.18), rgba(190,230,241,0.12) 68%, transparent);"></div>
         </div>
       </div>
     </div>
@@ -514,7 +524,7 @@
   <!-- ===================== COMMUNITY BAND ===================== -->
   <section data-screen-label="Community" style="position: relative; padding: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 64px) clamp(56px, 7vw, 80px);">
     <div style="max-width: 1200px; margin: 0 auto; position: relative; border-radius: 28px; overflow: hidden; min-height: clamp(360px, 46vw, 520px); display: flex; align-items: flex-end; background: #1A2E24;">
-      <video data-loop-fade src="/assets/media/community.mp4" poster="/assets/media/community-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Friends riding e-bikes together along the coast" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;"></video>
+      <video data-loop-fade src="/assets/media/community.mp4" poster="/assets/media/community-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Friends riding e-bikes together along the coast" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1;"></video>
       <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21,135,174,0.22) 0%, transparent 40%, rgba(20,32,26,0.62) 100%);"></div>
       <!-- birds -->
       <svg style="position: absolute; top: 8%; left: 12%;" width="90" height="40" viewBox="0 0 90 40" fill="none" stroke="#FBF6EC" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 20 Q13 10 22 20 Q31 10 40 20"></path><path d="M46 30 Q54 22 62 30 Q70 22 78 30"></path></svg>
