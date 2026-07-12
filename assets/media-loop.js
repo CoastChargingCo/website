@@ -1,48 +1,28 @@
 (function () {
-  var FADE = 0.35;
+  function bind(video) {
+    if (!video || video.dataset.loopBound) return;
+    video.dataset.loopBound = '1';
 
-  function ensurePlay(video) {
     video.muted = true;
     video.setAttribute('muted', '');
     video.setAttribute('playsinline', '');
-    var attempt = video.play();
-    if (attempt && typeof attempt.catch === 'function') {
-      attempt.catch(function () {});
-    }
-  }
-
-  function bind(video) {
-    if (!video || video.dataset.loopFadeBound) return;
-    video.dataset.loopFadeBound = '1';
+    video.loop = true;
     video.style.opacity = '1';
 
-    ensurePlay(video);
-
-    video.addEventListener('loadeddata', function () {
-      ensurePlay(video);
-    });
-
-    video.addEventListener('timeupdate', function () {
-      if (video.paused || video.readyState < 2) {
-        video.style.opacity = '1';
-        return;
+    function play() {
+      var attempt = video.play();
+      if (attempt && typeof attempt.catch === 'function') {
+        attempt.catch(function () {});
       }
+    }
 
-      var duration = video.duration;
-      if (!duration || !isFinite(duration) || duration < FADE * 2) {
-        video.style.opacity = '1';
-        return;
-      }
+    play();
 
-      var time = video.currentTime;
-      var opacity = 1;
+    video.addEventListener('loadeddata', play);
 
-      // Fade only near the loop seam to soften the cut, not at every start.
-      if (duration - time < FADE) {
-        opacity = Math.max(0.72, (duration - time) / FADE);
-      }
-
-      video.style.opacity = String(opacity);
+    video.addEventListener('ended', function () {
+      video.currentTime = 0;
+      play();
     });
   }
 
@@ -53,10 +33,7 @@
   function init() {
     bindAll();
 
-    // dc-runtime mounts the page with React after DOMContentLoaded.
-    var observer = new MutationObserver(function () {
-      bindAll();
-    });
+    var observer = new MutationObserver(bindAll);
     observer.observe(document.documentElement, { childList: true, subtree: true });
 
     window.addEventListener('load', bindAll);

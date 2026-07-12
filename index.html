@@ -243,15 +243,6 @@
   ::selection { background: #F0B429; color: #1B2A22; }
   @keyframes coastBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
   @keyframes coastDrift { 0% { transform: translateX(0); } 100% { transform: translateX(24px); } }
-  .coast-hero-photo {
-    filter: saturate(0.72) contrast(0.94) brightness(1.03);
-  }
-  .coast-hero-tone {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(145deg, rgba(166,218,236,0.52) 0%, rgba(190,230,241,0.34) 42%, rgba(21,135,174,0.2) 100%);
-    pointer-events: none;
-  }
 </style>
 <style>
   .ml-form-embedContainer { width: 100% !important; margin: 0 !important; }
@@ -466,8 +457,7 @@
       </div>
       <div style="position: relative;">
         <div style="position: relative; aspect-ratio: 4/3.4; border-radius: 26px; overflow: hidden; background: #C5E4EF; border: 1px solid rgba(27,42,34,0.12); box-shadow: 0 34px 64px -30px rgba(60,50,20,0.55);">
-          <img class="coast-hero-photo" src="/assets/media/hero.jpg" alt="E-bike on a coastal path at sunset" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
-          <div class="coast-hero-tone" aria-hidden="true"></div>
+          <img src="/assets/media/hero.jpg" alt="E-bike on a coastal path at sunset" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21,135,174,0.18), rgba(190,230,241,0.12) 68%, transparent);"></div>
         </div>
       </div>
