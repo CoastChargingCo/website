@@ -1,15 +1,5 @@
 import re
-import json
 from pathlib import Path
-
-UMBRELLA_42 = (
-    '<svg width="42" height="42" viewBox="0 0 48 48" fill="none" aria-hidden="true">'
-    '<path d="M8 22 L24 9 L40 22" stroke="#D9534A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>'
-    '<path d="M6 22h36" stroke="#D9534A" stroke-width="2.6" stroke-linecap="round"></path>'
-    '<line x1="24" y1="22" x2="24" y2="40" stroke="#0C6486" stroke-width="2.6" stroke-linecap="round"></line>'
-    '<path d="M12 22c0 6 5 10 12 10s12-4 12-10" stroke="#0C6486" stroke-width="2.6" stroke-linecap="round"></path>'
-    '</svg>'
-)
 
 NAV_SUN_26 = (
     '<svg width="26" height="26" viewBox="0 0 40 40" fill="none" aria-hidden="true">'
@@ -28,7 +18,7 @@ NAV_SUN_26 = (
 
 HEAD_META = (
     '<title>Coast Charging Co</title>\n'
-    '<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n'
+    '<link rel="icon" type="image/png" href="/assets/red-umbrella.png">\n'
 )
 
 HOW_LABEL = (
@@ -48,34 +38,11 @@ def patch_html(html: str) -> str:
         html = html.replace(
             '<head>\n<meta charset',
             '<head>\n<title>Coast Charging Co</title>\n'
-            '<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<meta charset',
+            '<link rel="icon" type="image/png" href="/assets/red-umbrella.png">\n<meta charset',
             1,
         )
 
     html = html.replace(HOW_LABEL, '', 1)
-
-    html = re.sub(
-        r'<img src="data:image/png;base64,[^"]+" alt="" style="width: 58px; height: auto;">',
-        UMBRELLA_42,
-        html,
-        count=1,
-    )
-
-    html = re.sub(
-        r'(<div style="position: relative; width: 88px; height: 88px;[^>]+>\s*)'
-        r'<svg width="42" height="42" viewBox="0 0 40 40" fill="none" stroke="#1587AE"[\s\S]*?</svg>',
-        r'\1' + UMBRELLA_42,
-        html,
-        count=1,
-    )
-
-    html = re.sub(
-        r'(<div style="position: relative; width: 88px; height: 88px;[^>]+>\s*)'
-        r'<svg width="42" height="42" viewBox="0 0 40 40" fill="none" stroke="#2F8F55"[\s\S]*?</svg>',
-        r'\1' + UMBRELLA_42,
-        html,
-        count=1,
-    )
 
     html = re.sub(
         r'(<div style="display: flex; align-items: center; gap: 10px;">\s*)'
@@ -86,31 +53,3 @@ def patch_html(html: str) -> str:
     )
 
     return html
-
-
-def main() -> None:
-    root = Path(__file__).resolve().parent
-    index_path = root / 'index.html'
-    index_path.write_text(patch_html(index_path.read_text(encoding='utf-8')), encoding='utf-8')
-    print('patched', index_path.name)
-
-    bundle_path = root / 'index (1).html'
-    if bundle_path.exists():
-        content = bundle_path.read_text(encoding='utf-8')
-        match = re.search(
-            r'(<script type="__bundler/template">)(.*?)(</script>)',
-            content,
-            re.DOTALL,
-        )
-        if match:
-            template = patch_html(json.loads(match.group(2)))
-            encoded = json.dumps(template, ensure_ascii=False)
-            bundle_path.write_text(
-                content[: match.start(2)] + encoded + content[match.end(2) :],
-                encoding='utf-8',
-            )
-            print('patched', bundle_path.name)
-
-
-if __name__ == '__main__':
-    main()
