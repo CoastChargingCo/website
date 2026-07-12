@@ -10,7 +10,7 @@ STEP_START = '        <!-- 1: select model (beach umbrella) -->'
 STEP_END = '      <div style="display: flex; align-items: center; justify-content: center; gap: 12px;'
 
 HOST_ICON = (
-    '<img src="/assets/red-umbrella.png" alt="" width="64" height="64" '
+    '<img src="/assets/red-umbrella.png" alt="" width="128" height="128" '
     'style="margin-bottom: 20px; object-fit: contain;" aria-hidden="true">'
 )
 
