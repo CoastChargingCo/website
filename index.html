@@ -456,9 +456,9 @@
         </div>
       </div>
       <div style="position: relative;">
-        <div style="position: relative; aspect-ratio: 4/3.4; border-radius: 26px; overflow: hidden; background: repeating-linear-gradient(135deg, #E7D9B8 0 14px, #DFCEA5 14px 28px); border: 1px solid rgba(27,42,34,0.12); box-shadow: 0 34px 64px -30px rgba(60,50,20,0.55); display: flex; align-items: flex-end; justify-content: center;">
+        <div style="position: relative; aspect-ratio: 4/3.4; border-radius: 26px; overflow: hidden; background: #DFCEA5; border: 1px solid rgba(27,42,34,0.12); box-shadow: 0 34px 64px -30px rgba(60,50,20,0.55);">
+          <img src="/assets/media/hero.jpg" alt="E-bike on a coastal path at sunset" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21,135,174,0.2), rgba(240,180,41,0.14) 68%, transparent);"></div>
-          <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.04em; color: #6E6650; background: rgba(255,253,246,0.9); padding: 8px 14px; border-radius: 8px; text-align: center;">[ hero photo: a group riding e-bikes to the beach, sunny + relaxed ]</span>
         </div>
       </div>
     </div>
@@ -513,14 +513,14 @@
 
   <!-- ===================== COMMUNITY BAND ===================== -->
   <section data-screen-label="Community" style="position: relative; padding: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 64px) clamp(56px, 7vw, 80px);">
-    <div style="max-width: 1200px; margin: 0 auto; position: relative; border-radius: 28px; overflow: hidden; min-height: clamp(360px, 46vw, 520px); display: flex; align-items: flex-end; background: repeating-linear-gradient(135deg, #E3D4B1 0 16px, #D9C79E 16px 32px);">
+    <div style="max-width: 1200px; margin: 0 auto; position: relative; border-radius: 28px; overflow: hidden; min-height: clamp(360px, 46vw, 520px); display: flex; align-items: flex-end; background: #1A2E24;">
+      <video data-loop-fade src="/assets/media/community.mp4" poster="/assets/media/community-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Friends riding e-bikes together along the coast" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;"></video>
       <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21,135,174,0.22) 0%, transparent 40%, rgba(20,32,26,0.62) 100%);"></div>
       <!-- birds -->
       <svg style="position: absolute; top: 8%; left: 12%;" width="90" height="40" viewBox="0 0 90 40" fill="none" stroke="#FBF6EC" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 20 Q13 10 22 20 Q31 10 40 20"></path><path d="M46 30 Q54 22 62 30 Q70 22 78 30"></path></svg>
       <!-- palm silhouettes -->
       <svg style="position: absolute; bottom: 0; right: 4%; width: clamp(130px, 16vw, 200px); color: #16221B; opacity: 0.32; pointer-events: none;" viewBox="0 0 120 160" fill="currentColor" aria-hidden="true"><path d="M58 158 C 54 120, 60 90, 64 60 L72 60 C 74 92, 66 126, 66 158 Z"></path><path d="M64 58 C 40 38, 18 36, 4 46 C 22 40, 44 46, 63 60 Z"></path><path d="M64 58 C 58 26, 64 10, 74 2 C 68 22, 70 40, 68 60 Z"></path><path d="M66 58 C 92 34, 112 36, 118 50 C 98 40, 78 46, 66 60 Z"></path><path d="M63 60 C 40 58, 20 66, 10 80 C 30 64, 48 62, 62 62 Z"></path><path d="M67 60 C 90 58, 106 66, 114 82 C 96 66, 78 62, 66 62 Z"></path><circle cx="65" cy="58" r="5"></circle></svg>
-      <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.04em; color: #6E6650; background: rgba(255,253,246,0.9); padding: 8px 14px; border-radius: 8px; text-align: center;">[ lifestyle photo: a group of friends + bikes at a beachside event, golden hour ]</span>
-      <div style="position: relative; padding: clamp(28px, 4vw, 48px); max-width: 640px;">
+      <div style="position: relative; padding: clamp(28px, 4vw, 48px); max-width: 640px; z-index: 1;">
         <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 48px); line-height: 1.05; letter-spacing: -0.02em; color: #FFFDF8; margin: 0 0 14px; text-shadow: 0 2px 20px rgba(0,0,0,0.3);">Better rides are better together.</h2>
         <p style="font-size: clamp(16px, 1.6vw, 19px); line-height: 1.55; color: #F4F0E6; margin: 0; text-shadow: 0 2px 16px rgba(0,0,0,0.35); max-width: 34em;">Coast is built for the group ride. Friends meeting at the pier, families rolling to the farmers market, a whole crew heading to the show. Everyone charges. Everyone stays.</p>
       </div>
@@ -745,6 +745,7 @@ class Component extends DCLogic {
 
 
 
+<script src="/assets/media-loop.js"></script>
 <script src="/assets/mailerlite.js"></script>
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
 
