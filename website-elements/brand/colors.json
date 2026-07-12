@@ -1,0 +1,144 @@
+{
+  "brandName": "Coast Charging Co",
+  "domain": "coastchargingco.com",
+  "email": "hello@coastchargingco.com",
+  "palette": {
+    "oceanTeal": {
+      "hex": "#1587AE",
+      "use": "Headlines, links, accent text"
+    },
+    "deepTeal": {
+      "hex": "#0C6486",
+      "use": "Buttons (host), birds, palms, nav accents"
+    },
+    "skyBlue": {
+      "hex": "#8FCFE8",
+      "use": "Hero gradient top"
+    },
+    "lightSky": {
+      "hex": "#AEDDEE",
+      "use": "Background gradients"
+    },
+    "paleSky": {
+      "hex": "#BEE6F1",
+      "use": "Host section background"
+    },
+    "softSky": {
+      "hex": "#A6DAEC",
+      "use": "Host section gradient"
+    },
+    "heroFrame": {
+      "hex": "#C5E4EF",
+      "use": "Hero photo frame background"
+    },
+    "coralRed": {
+      "hex": "#D9534A",
+      "use": "Primary CTA buttons, step 1 badge, bicycle icon"
+    },
+    "coralHover": {
+      "hex": "#D9534F",
+      "use": "Bicycle SVG stroke"
+    },
+    "sunGold": {
+      "hex": "#F0B429",
+      "use": "Sun logo, selection highlight"
+    },
+    "sunGlow": {
+      "hex": "#FCE58A",
+      "use": "Sun radial gradient"
+    },
+    "sunRay": {
+      "hex": "#E0913F",
+      "use": "Sun ray strokes"
+    },
+    "forestGreen": {
+      "hex": "#2F8F55",
+      "use": "Step 3 battery icon"
+    },
+    "plugFill": {
+      "hex": "#CDEAF2",
+      "use": "Charger plug icon fill"
+    },
+    "bodyText": {
+      "hex": "#1B2A22",
+      "use": "Primary body text"
+    },
+    "mutedText": {
+      "hex": "#3A4740",
+      "use": "Secondary body text"
+    },
+    "stepText": {
+      "hex": "#47554A",
+      "use": "How-it-works descriptions"
+    },
+    "hostHeading": {
+      "hex": "#14322F",
+      "use": "Host section headline"
+    },
+    "hostBody": {
+      "hex": "#204A56",
+      "use": "Host section body"
+    },
+    "footerBg": {
+      "hex": "#16302B",
+      "use": "Footer background"
+    },
+    "footerText": {
+      "hex": "#CDD6CF",
+      "use": "Footer body text"
+    },
+    "footerMuted": {
+      "hex": "#A7B4AC",
+      "use": "Footer links"
+    },
+    "footerDim": {
+      "hex": "#7E8B83",
+      "use": "Copyright line"
+    },
+    "cream": {
+      "hex": "#FFFDF8",
+      "use": "Light text on dark backgrounds"
+    },
+    "warmCream": {
+      "hex": "#FFFDF6",
+      "use": "Form input background"
+    },
+    "buttonText": {
+      "hex": "#FFF8EE",
+      "use": "Text on coral buttons"
+    },
+    "communityBg": {
+      "hex": "#1A2E24",
+      "use": "Community video section fallback"
+    },
+    "sandLight": {
+      "hex": "#EBDDBB",
+      "use": "Page gradient lower section"
+    },
+    "sandMid": {
+      "hex": "#E4D0A4",
+      "use": "Page gradient bottom"
+    },
+    "inputBorder": {
+      "hex": "#C9B78E",
+      "use": "Form field borders"
+    },
+    "inputFocus": {
+      "hex": "#7FB6C8",
+      "use": "Form field focus border"
+    }
+  },
+  "gradients": {
+    "pageBackground": "radial-gradient(900px 460px at 78% 60px, rgba(252,229,138,0.5) 0%, rgba(252,229,138,0) 60%), linear-gradient(180deg, #8FCFE8 0%, #AEDDEE 16%, #D8DBC0 40%, #EBDDBB 52%, #E4D0A4 100%)",
+    "hostSection": "linear-gradient(180deg, #BEE6F1 0%, #A6DAEC 100%)",
+    "communityOverlay": "linear-gradient(180deg, rgba(21,135,174,0.22) 0%, transparent 40%, rgba(20,32,26,0.62) 100%)",
+    "heroPhotoOverlay": "linear-gradient(180deg, rgba(21,135,174,0.18), rgba(190,230,241,0.12) 68%, transparent)"
+  },
+  "mailerliteSuggestedBrandColors": [
+    "#16302B",
+    "#1587AE",
+    "#D9534A",
+    "#F0B429",
+    "#FFFDF8"
+  ]
+}

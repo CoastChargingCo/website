@@ -1,0 +1,22 @@
+{
+  "headings": {
+    "family": "Bricolage Grotesque",
+    "googleFontsUrl": "https://fonts.google.com/specimen/Bricolage+Grotesque",
+    "weights": [
+      700,
+      800
+    ],
+    "fallback": "sans-serif"
+  },
+  "body": {
+    "family": "Figtree",
+    "googleFontsUrl": "https://fonts.google.com/specimen/Figtree",
+    "weights": [
+      400,
+      500,
+      600
+    ],
+    "fallback": "system-ui, sans-serif"
+  },
+  "mailerliteNote": "Set brand heading font to Bricolage Grotesque and body font to Figtree. MailerLite may substitute similar fonts in some clients."
+}
