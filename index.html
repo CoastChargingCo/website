@@ -243,6 +243,29 @@
   ::selection { background: #F0B429; color: #1B2A22; }
   @keyframes coastBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
   @keyframes coastDrift { 0% { transform: translateX(0); } 100% { transform: translateX(24px); } }
+  .site-nav { flex-wrap: wrap; }
+  .site-nav-logo { min-width: 0; flex-shrink: 1; }
+  .site-nav-logo-text { white-space: nowrap; }
+  @media (max-width: 640px) {
+    .site-nav {
+      row-gap: 10px;
+      padding-top: 12px !important;
+      padding-bottom: 12px !important;
+    }
+    .site-nav-logo svg { width: 28px; height: 28px; }
+    .site-nav-logo-text { font-size: 16px !important; }
+    .site-nav-actions {
+      flex: 1 1 100%;
+      justify-content: flex-end;
+      gap: 10px !important;
+    }
+    .site-nav-host { font-size: 13px !important; }
+    .site-nav-cta {
+      font-size: 13px !important;
+      padding: 8px 14px !important;
+      white-space: nowrap;
+    }
+  }
 </style>
 <style>
   .ml-form-embedContainer { width: 100% !important; margin: 0 !important; }
@@ -316,14 +339,14 @@
   </div>
 
   <!-- ===================== NAV ===================== -->
-  <nav data-screen-label="Nav" style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px clamp(20px, 5vw, 64px); background: rgba(174,221,238,0.82); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(12,100,134,0.12);">
-    <a href="#top" style="display: flex; align-items: center; gap: 11px; text-decoration: none; color: #1B2A22;">
+  <nav class="site-nav" data-screen-label="Nav" style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px clamp(20px, 5vw, 64px); background: rgba(174,221,238,0.82); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(12,100,134,0.12);">
+    <a class="site-nav-logo" href="#top" style="display: flex; align-items: center; gap: 11px; text-decoration: none; color: #1B2A22;">
       <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="8.5" fill="#F0B429"></circle><g stroke="#E0913F" stroke-width="2.4" stroke-linecap="round"><line x1="20" y1="3" x2="20" y2="8"></line><line x1="20" y1="32" x2="20" y2="37"></line><line x1="3" y1="20" x2="8" y2="20"></line><line x1="32" y1="20" x2="37" y2="20"></line><line x1="8" y1="8" x2="11.5" y2="11.5"></line><line x1="28.5" y1="28.5" x2="32" y2="32"></line><line x1="8" y1="32" x2="11.5" y2="28.5"></line><line x1="28.5" y1="11.5" x2="32" y2="8"></line></g></svg>
-      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.01em;">Coast&nbsp;Charging&nbsp;Co</span>
+      <span class="site-nav-logo-text" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.01em;">Coast&nbsp;Charging&nbsp;Co</span>
     </a>
-    <div style="display: flex; align-items: center; gap: clamp(14px, 2vw, 30px);">
-      <a href="#host" style="text-decoration: none; color: #3A4740; font-weight: 500; font-size: 15px;">Host a Coast Charger</a>
-      <a href="#signup" style="text-decoration: none; background: #D9534A; color: #FFF8EE; font-weight: 600; font-size: 15px; padding: 10px 20px; border-radius: 999px; box-shadow: 0 6px 16px rgba(217,83,74,0.3);">Get updates</a>
+    <div class="site-nav-actions" style="display: flex; align-items: center; gap: clamp(14px, 2vw, 30px);">
+      <a class="site-nav-host" href="#host" style="text-decoration: none; color: #3A4740; font-weight: 500; font-size: 15px;">Host a Coast Charger</a>
+      <a class="site-nav-cta" href="#signup" style="text-decoration: none; background: #D9534A; color: #FFF8EE; font-weight: 600; font-size: 15px; padding: 10px 20px; border-radius: 999px; box-shadow: 0 6px 16px rgba(217,83,74,0.3);">Get updates</a>
     </div>
   </nav>
 
