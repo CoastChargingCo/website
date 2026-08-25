@@ -54,8 +54,12 @@
   .site-nav {
     flex-wrap: wrap;
     row-gap: 0;
+    align-items: flex-start !important;
     padding-top: 12px !important;
     padding-bottom: 12px !important;
+  }
+  .site-nav-logo {
+    height: 40px;
   }
   .site-nav-logo svg {
     width: 28px;
