@@ -1,0 +1,106 @@
+.site-nav {
+  flex-wrap: nowrap;
+}
+.site-nav-logo {
+  min-width: 0;
+  flex-shrink: 1;
+}
+.site-nav-logo-text {
+  white-space: nowrap;
+}
+.site-nav-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+.site-nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(12, 100, 134, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.78);
+  color: #1B2A22;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px -8px rgba(20, 32, 26, 0.4);
+}
+.site-nav-toggle:hover,
+.site-nav-toggle:focus-visible {
+  background: #FFFDF8;
+}
+.site-nav-toggle-close {
+  display: none;
+}
+.site-nav-toggle-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+.site-nav-link.is-active {
+  font-weight: 700 !important;
+  color: #1B2A22 !important;
+}
+
+@media (max-width: 880px) {
+  .site-nav {
+    flex-wrap: wrap;
+    row-gap: 0;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+  .site-nav-logo svg {
+    width: 28px;
+    height: 28px;
+  }
+  .site-nav-logo-text {
+    font-size: 16px !important;
+  }
+  .site-nav-actions {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    gap: 8px !important;
+    min-width: 0;
+  }
+  .site-nav-toggle {
+    display: inline-flex;
+    order: 2;
+  }
+  .site-nav-cta {
+    order: 1;
+    font-size: 13px !important;
+    padding: 8px 14px !important;
+    white-space: nowrap;
+  }
+  .site-nav-link,
+  .site-nav-host {
+    display: none;
+  }
+  .site-nav-checkbox:checked + .site-nav-actions {
+    flex-wrap: wrap;
+  }
+  .site-nav-checkbox:checked + .site-nav-actions .site-nav-link,
+  .site-nav-checkbox:checked + .site-nav-actions .site-nav-host {
+    display: flex;
+    align-items: center;
+    flex: 1 1 100%;
+    order: 3;
+    padding: 14px 2px;
+    font-size: 16px !important;
+    border-top: 1px solid rgba(12, 100, 134, 0.12);
+  }
+  .site-nav-checkbox:checked + .site-nav-actions .site-nav-toggle-open {
+    display: none;
+  }
+  .site-nav-checkbox:checked + .site-nav-actions .site-nav-toggle-close {
+    display: block;
+  }
+}
