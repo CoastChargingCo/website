@@ -1,53 +1,26 @@
 # Deploying to Vercel
 
-## Files to upload to GitHub
+The site is plain static HTML. There is no build step.
 
-Upload **all** of these (not just `index.html`):
+## Files
 
 ```
-index.html
-vercel.json
-assets/
-  dc-runtime.js
-  mailerlite.js
+index.html, about.html, roadmap.html
+vercel.json            (clean URLs: /about serves about.html)
+assets/css/site.css    (all styles and design tokens)
+assets/js/site.js      (phone menu + video loop)
+assets/mailerlite.js   (form success handlers; names must match the form IDs)
+assets/media/          (hero photo, community video and poster)
+assets/red-umbrella.png (favicon)
 ```
 
-Vercel will not work if you only upload `index.html` — the page loads JavaScript from the `assets/` folder.
+## Steps
 
-## Web Analytics
+1. Commit and push to GitHub. Every branch gets a Vercel preview URL; `main` deploys to coastchargingco.com.
+2. Vercel settings: Framework preset "Other", build command empty, output directory `.`.
+3. Vercel Web Analytics stays enabled through the script tag in each page's `<head>`.
 
-The site includes Vercel Web Analytics scripts in `index.html`.
+## Editing
 
-1. In the [Vercel dashboard](https://vercel.com), open your project → **Analytics** → click **Enable**.
-2. Redeploy after enabling (so `/_vercel/insights/*` routes are available).
-3. View visitors under **Analytics** once people hit the live site.
-
-Analytics only collect data from the moment they are enabled — there is no historical backfill.
-
-## Why the site showed raw JavaScript text
-
-The previous version put ~60KB of JavaScript **inside** the HTML file. Browsers treat any `</script>` inside that block as the end of the script, which can leak the rest of the code as visible text on the page. Moving scripts to `assets/*.js` fixes that.
-
-## Do not deploy for the live site
-
-- `index (1).html` — Cursor bundle format (local editing only)
-- `user interest.txt` / `host interest.txt` — MailerLite source embeds (already in the site)
-- `unpack_for_deploy.py` / `fix_index_html.py` — build tools (optional to keep in repo)
-
-## Vercel settings
-
-- **Framework preset:** Other
-- **Build command:** leave empty
-- **Output directory:** `.` (root)
-
-## After editing in Cursor
-
-```bash
-python unpack_for_deploy.py
-```
-
-Then commit and push:
-
-- `index.html`
-- `assets/dc-runtime.js`
-- `assets/mailerlite.js`
+- Colors, type sizes, spacing and radii are CSS variables at the top of `assets/css/site.css`.
+- Do not change the MailerLite form IDs, classes, `action` URLs or hidden inputs. Restyle them in `site.css` instead.
